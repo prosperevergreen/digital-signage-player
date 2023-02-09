@@ -1,0 +1,20 @@
+.AppLayout {
+  min-height: 100vh;
+  color: #666666;
+  :global {
+    .ant-layout-header {
+      background-color: #fff;
+      padding: 0;
+    }
+    .ant-layout-content {
+      background-color: #00aeef;
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+    }
+    .ant-layout-footer {
+      background: #282828;
+      color: #ffffff;
+      text-align: center;
+    }
+  }
+}

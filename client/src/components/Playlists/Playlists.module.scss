@@ -1,0 +1,16 @@
+.PlaylistComponent {
+  :global {
+    .ant-card-body {
+      padding: 1px;
+    }
+    .ant-card-actions {
+      button {
+        font-size: 1rem;
+      }
+    }
+    .action-btns {
+      display: flex;
+    }
+
+  }
+}

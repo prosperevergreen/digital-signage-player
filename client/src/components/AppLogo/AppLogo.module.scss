@@ -1,0 +1,18 @@
+.AppLogoComponent {
+  // display: inline-flex;
+  // justify-content: center;
+  // align-items: flex-end;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  // line-height: 1.25;
+  color: #292626;
+  :global {
+    .digital {
+      color: #00aeef;
+    }
+    // .ant-image {
+    //   padding-right: 5px;
+    // }
+  }
+}

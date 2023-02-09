@@ -1,0 +1,36 @@
+.PlaylistComponent {
+  :global {
+    .ant-card-body {
+      padding: 1px;
+    }
+
+    .ant-card-actions {
+      button {
+        font-size: 1rem;
+      }
+
+      .play-button {
+        color: #52c41a;
+        &:disabled {
+          color: grey;
+        }
+      }
+    }
+
+    .action-col {
+      display: flex;
+    }
+
+    .table-media-icon{
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    .table-col-source{
+      max-width: 25vw;
+      white-space: nowrap;
+      text-overflow: ellipsis; 
+      overflow: hidden;
+    }
+  }
+}
