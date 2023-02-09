@@ -1,0 +1,61 @@
+
+
+version: "3"
+services:
+
+  dsp-mongodb:
+    container_name: dsp_mongodb
+    image: mongo
+    # ports:
+    #   - "27017:27017"
+    # volumes: 
+    #   - ./server/database/mongo:/data/db  # dev Mode
+    networks:
+      - backend
+
+  dsp-server:
+    container_name: dsp_server
+    restart: unless-stopped
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    # volumes: # Dev Mode
+    #   - ./server/:/usr/src/app/ # Dev Mode
+    ports:
+      - "7001:7001"
+    depends_on:
+      - dsp-mongodb
+    networks:
+      - frontend
+      - backend
+    environment:
+      MONGO_HOST: mongodb://dsp-mongodb:27017/digital-signage-player
+      SERVER_PORT: 7001
+      WAIT_HOSTS: dsp-mongodb:27017
+      WAIT_AFTER_HOSTS: 2
+    # command: sh -c "npm run dev" # Dev Mode
+    command: sh -c "/wait && npm run start" # npm run dev" # Dev Mode
+
+  dsp-client:
+    container_name: dsp_client
+    restart: unless-stopped
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - dsp-server
+    networks:
+      - frontend
+    environment:
+      WAIT_HOSTS: dsp_server:7001
+      WAIT_AFTER_HOSTS: 1
+    stdin_open: true
+    command: sh -c "/wait && nginx -g 'daemon off;'"
+
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
