@@ -14,19 +14,18 @@ To run the app,
 
 1. Clone the repository `git clone https://gitlab.com/prosperevergreen/digital-signage-player`
 2. Move into the folder with the command `cd digital-signage-palyer`
-3. In the the root directory (digital-signage-player), start the app with the command `docker-compose up -d` you can now view the app on a browser at `http://localhost:80`
-4. In the the root directory (digital-signage-player), to stop the app use the command `docker-compose down`
+3. In the the root directory `digital-signage-player`, start the app with the command `docker-compose up -d` you can now view the app on a browser at `http://localhost:80`
+4. In the the root directory `digital-signage-player`, to stop the app use the command `docker-compose down`
 
 ---
 
 ## MOBILE SCREENSHOT
 
 <div >
-<!-- [mobile screen shot](./documentation/mobile-1.png) -->
-<img width="300px" src="./documentation/mobile/mobile-1.png">
-<img width="300px" src="./documentation/mobile/mobile-2.png">
-<img width="300px" src="./documentation/mobile/mobile-3.png">
-<img width="300px" src="./documentation/mobile/mobile-4.png">
+  <img width="300px" src="./documentation/mobile/mobile-1.png">
+  <img width="300px" src="./documentation/mobile/mobile-2.png">
+  <img width="300px" src="./documentation/mobile/mobile-3.png">
+  <img width="300px" src="./documentation/mobile/mobile-4.png">
 </div>
 
 ---
@@ -34,9 +33,9 @@ To run the app,
 ## MOBILE VIDEO
 
 <div>
-<video controls width="340" height="650">
-<source src="./documentation/recording/mobile-recording.mov" type="video/mp4">
-</video>
+  <video controls width="340" height="650">
+    <source src="./documentation/recording/mobile-recording.mov" type="video/mp4">
+  </video>
 </div>
 
 ## DESKTOP SCREENSHOT
@@ -53,12 +52,12 @@ To run the app,
 ## DESKTOP VIDEO
 
 <div>
-<video width="1080" height="850" controls>
-  <source src="./documentation/recording/desktop-recording.mp4" type="video/mp4">
-</video>
+  <video width="1080" height="850" controls>
+    <source src="./documentation/recording/desktop-recording.mp4" type="video/mp4">
+  </video>
 </div>
 
-## Additional questions related to the task:
+## Additional questions related to the task
 
 1. How did you implement the content looping for the Digital Signage player? What
    challenges did you face?
