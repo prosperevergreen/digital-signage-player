@@ -17,9 +17,6 @@ To run the app,
 3. In the the root directory (digital-signage-player), start the app with the command `docker-compose up -d` you can now view the app on a browser at `http://localhost:80`
 4. In the the root directory (digital-signage-player), to stop the app use the command `docker-compose down`
 
-For further documentation of the client see the [Client README.md](client/README.md)  
-For further documentation of the server see the [Server README.md](server/README.md)
-
 ---
 
 ## MOBILE SCREENSHOT
@@ -29,7 +26,8 @@ For further documentation of the server see the [Server README.md](server/README
 <img width="300px" src="./documentation/mobile/mobile-1.png">
 <img width="300px" src="./documentation/mobile/mobile-2.png">
 <img width="300px" src="./documentation/mobile/mobile-3.png">
-<img width="300px" src="./documentation/mobile/mobile-4.png"></div>
+<img width="300px" src="./documentation/mobile/mobile-4.png">
+</div>
 
 ---
 
