@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Carousel, Card, Button, Image, message } from 'antd';
+import { Carousel, Card, Button, Image, message, Spin } from 'antd';
 import ReactPlayer from 'react-player';
 import { CarouselRef } from 'antd/es/carousel';
 import { Link, useParams } from 'react-router-dom';
@@ -45,6 +45,13 @@ const DigitalPlayer = () => {
   const imgCarouselRef = useRef<CarouselRef | null>(null);
   const titleCarouselRef = useRef<CarouselRef | null>(null);
   const videosRef = useRef<ReactPlayer[]>([]);
+
+  if (getPlaylistMediaQuery.isLoading)
+    return (
+      <div className={styles.load}>
+        <Spin />
+      </div>
+    );
 
   const handleGoToNext = () => {
     setAutoPlaying(true);
@@ -101,6 +108,7 @@ const DigitalPlayer = () => {
             autoplaySpeed={7000}
             ref={(c) => (imgCarouselRef.current = c)}
             beforeChange={handleOnChangeCarusel}
+            // onLazyLoad={handleOnChangeCarusel}
           >
             {mediaItems.map((media, index) => {
               if (media.type === 'IMAGE')
