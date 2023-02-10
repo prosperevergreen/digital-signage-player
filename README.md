@@ -30,8 +30,9 @@ To run the app,
 
 ---
 
-## MOBILE VIDEO
+## MOBILE DEMO VIDEO
 
+There is also a [MOBILE DEMO VIDEO](./documentation/recording/mobile-recording.mov)
 <div>
   <video controls width="340" height="650">
     <source src="./documentation/recording/mobile-recording.mov" type="video/mp4">
@@ -51,6 +52,7 @@ To run the app,
 
 ## DESKTOP VIDEO
 
+There is also a [DESKTOP DEMO VIDEO](./documentation/recording/desktop-recording.mp4)
 <div>
   <video width="1080" height="850" controls>
     <source src="./documentation/recording/desktop-recording.mp4" type="video/mp4">
