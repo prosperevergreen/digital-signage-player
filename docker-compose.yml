@@ -12,17 +12,17 @@ services:
     #   - ./server/database/mongo:/data/db  # dev Mode
     networks:
       - backend
+    restart: unless-stopped
 
   dsp-server:
     container_name: dsp_server
-    restart: unless-stopped
     build:
       dockerfile: Dockerfile
       context: ./server
     # volumes: # Dev Mode
     #   - ./server/:/usr/src/app/ # Dev Mode
-    ports:
-      - "7001:7001"
+    #    ports:
+    #      - "7001:7001"
     depends_on:
       - dsp-mongodb
     networks:
@@ -35,15 +35,15 @@ services:
       WAIT_AFTER_HOSTS: 2
     # command: sh -c "npm run dev" # Dev Mode
     command: sh -c "/wait && npm run start" # npm run dev" # Dev Mode
+    restart: unless-stopped
 
   dsp-client:
     container_name: dsp_client
-    restart: unless-stopped
     build: 
       context: ./client
       dockerfile: Dockerfile
-    ports:
-      - "80:80"
+        #    ports:
+        #      - "80:80"
     depends_on:
       - dsp-server
     networks:
@@ -53,9 +53,11 @@ services:
       WAIT_AFTER_HOSTS: 1
     stdin_open: true
     command: sh -c "/wait && nginx -g 'daemon off;'"
+    restart: unless-stopped
 
 networks:
-  backend:
-    driver: bridge
   frontend:
+    name: npm-network
+    external: true
+  backend:
     driver: bridge

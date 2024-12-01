@@ -4,4 +4,4 @@ export const ROUTES = {
   PLAYLISTS: 'playlists'
 };
 
-export const SERVER_URL = 'http://localhost:7001/api';
+export const SERVER_URL = 'https://dsp.tromzy.com/api';
